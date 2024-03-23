@@ -20,7 +20,7 @@ const ProgressBar = () => {
     useEffect(() => {
         width >= 100 && setWidth(100);
         width >= 100 && router.push("/home")
-    }, [width, setWidth]);
+    }, [width, setWidth, router]);
 
   return (
     <div className="h-screen flex flex-col items-center justify-center gap-2 relative">

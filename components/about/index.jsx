@@ -6,11 +6,7 @@ import Image from 'next/image';
 
 const About = () => {
     const style = {
-        // height: "500px",
-        overflowY: "scroll",
-        // "@media (max-width: '768px')": {
-        //     height: "100vh"
-        // },
+        overflowY: "scroll"
     }
     return (
     <div className="m-0 p-0 relative overflow-y-hidden flex flex-col h-screen">
@@ -33,7 +29,6 @@ const About = () => {
                         <p className="ml-6 mb-3">I specialize in front-end development with a strong proficiency in React, TypeScript, Next.js, and React Native. On the backend, I'm proficient in Node.js and Express, NestJS, adept at designing robust APIs and scalable server architectures. My design aesthetic is enhanced with expertise in Tailwind CSS, ensuring pixel-perfect UI/UX across all platforms. Additionally, I bring a wealth of experience in enhancing user interactions through the strategic use of jQuery.</p>
                         <p className="ml-6 mb-3"> React Native, particularly, allows me to extend my expertise to mobile software development, enabling the creation of robust and native-like applications for both iOS and Android platforms.</p>
                         <p className="ml-6">Moreover, I bring extensive experience in database management, with proficiency in MongoDB, PostgreSQL, and SQL. I've leveraged MongoDB's flexibility and scalability in numerous projects, harnessing the power of Mongoose for efficient schema management and data modeling. Additionally, I have hands-on experience with PostgreSQL, utilizing TypeORM for seamless integration and efficient ORM capabilities.</p>
-                        
                     </li>
                     <li className="mb-8">
                         <h3 className="text-2xl font-bold flex items-center gap-3 mb-4"><i className="bi bi-circle text-sm"></i>Experience</h3>
