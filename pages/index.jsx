@@ -1,10 +1,10 @@
 import React from 'react';
-import Homepage from '@/components/homepage';
+import ProgressBar from '@/components/progressbar';
 
 
 const index = () => {
   return (
-    <Homepage />
+    <ProgressBar />
   )
 }
 

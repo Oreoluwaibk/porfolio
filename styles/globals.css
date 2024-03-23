@@ -29,7 +29,65 @@ body {
 .flex-center{
     @apply flex items-center justify-center
 }
+.button{
+    background-color: #a3847f;
+    transition: background-color ease-in 0.7s;
+}
+.button:hover{
+    color: #3c323c;
+}
+/* .description li::before{
+    content: "▹";
+} */
+.code-tool{
+    @apply border-2 border-sec rounded-3xl py-2 px-4 bg-sec cursor-pointer font-semibold text-sm text-nowrap
+}
+
+.show {
+    opacity: 1;
+}
+.no-scroll-bar::-webkit-scrollbar{
+    display: none;
+}
+.techused li{
+    cursor: pointer;
+    @apply transition-colors duration-[1s] hover:text-pri
+}
+.menu-link{
+    @apply transition-colors ease-in-out duration-1000 text-sec hover:text-sec-3
+}
+.active{
+    @apply text-sec-5 italic font-semibold
+}
   
+.cardpad{
+    margin-left: -110px;
+}
+.cardpadright{
+    margin-right: -110px;
+}
+.slideDown{
+    animation: dropdown 8s;
+}
+.drop-down{
+    position: absolute;
+    animation: dropdown 8s infinite;
+}
+@keyframes dropdown {
+    0%   {top: 0;}
+    /* 25%  {top: 5%;} */
+    /* 50%  {top: 15%;} */
+    100% {top: 40%;}
+}
+
+@media (max-width:768px) {
+    .cardpad{
+        margin-left: 0px;
+    }
+    .cardpadright{
+        margin-right: 0px;
+    }
+}
 @layer utilities {
     .text-balance {
         text-wrap: balance;

@@ -1,0 +1,1 @@
+export { default as ProfilePhoto } from "./profilephoto.png"
