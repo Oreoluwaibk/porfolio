@@ -32,7 +32,7 @@ const Header = ( { active }) => {
     <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-20 pt-10 md:pt-16 pb-4 relative">
         <div className="logo flex items-center justify-between pb-4">
             <div>
-                <Link href="/">
+                <Link href="/home">
                     <Image
                         src={newLogoNoBackground}
                         width={100}
