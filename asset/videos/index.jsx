@@ -1,0 +1,1 @@
+export { default as VideoShop } from "./ecommerce.webm"

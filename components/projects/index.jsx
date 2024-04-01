@@ -4,8 +4,9 @@ import Header from '../reusable/Header';
 import $ from "jquery";
 import { Carousel } from 'antd';
 import Image from 'next/image';
-import { ProfilePhoto } from '@/asset/images';
+import { Mob1, Mob2, Mob3, OneStop, ProfilePhoto, RCF1 } from '@/asset/images';
 import Link from 'next/link';
+// import { VideoShop } from '@/asset/videos';
 
 
 const Projects = () => {
@@ -75,6 +76,14 @@ const Projects = () => {
                                 <li className="code-tool">Express</li>
                                 <li className="code-tool">Bootstraps</li>
                             </ul>
+
+                            <a 
+                                href='https://www.smartlearninguk.com' 
+                                target="_blank"
+                                className="block text-gray-400 italic font-mdeium text-sm mt-4 transition-opacity duration-1000 ease-in-out hover:opacity-60"
+                            >
+                                Click to view project
+                            </a>
                         </div>
                     </li>
                     <li className="flex flex-col gap-2">
@@ -103,6 +112,21 @@ const Projects = () => {
                                 <li className="code-tool">TypeOrm</li>
                                 <li className="code-tool">Postgress</li>
                             </ul>
+
+                            <a 
+                                href='https://beta.loystar.co/food' 
+                                target="_blank"
+                                className="block text-gray-400 italic font-mdeium text-sm mt-4 transition-opacity duration-1000 ease-in-out hover:opacity-60"
+                            >
+                                Click to view product shop
+                            </a>
+                            <a 
+                                href='https://web0.loystar.co' 
+                                target="_blank"
+                                className="block text-gray-400 italic font-mdeium text-sm mt-4 transition-opacity duration-1000 ease-in-out hover:opacity-60"
+                            >
+                                Click to view Merhant dashboard
+                            </a>
                         </div>
                     </li>
                     
@@ -175,17 +199,18 @@ const Projects = () => {
                     <li className="flex gap-4">
                         <div className="hidden md:block w-3/5 h-72 z-10 relative">
                             <Image 
-                                src={ProfilePhoto}
+                                src={OneStop}
                                 alt='Project Image'   
-                                className="object-cover object-right-top w-full opacity-80 h-full"
+                                className="object-cover  w-full opacity-80 h-full"
                             />
+                           
                             <div className="h-full w-full absolute top-0 bg-black opacity-70 transition-opacity duration-[2s] ease-in-out hover:opacity-0"></div>
                         </div>
                         
                         <div 
                             className="flex flex-col gap-8 py-8 p-4 md:p-0 rounded-lg shadow-lg md:bg-transparent bg-pri md:border-0 md:gap-1 justify-between w-full md:w-2/5 z-10 relative"
                         > 
-                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${ProfilePhoto.src})`}}></div>
+                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${OneStop.src})`}}></div>
 
                             <h4 className="text-2xl italic font-semibold text-gray-300">Full fledge Ecommerce webite</h4>
 
@@ -201,25 +226,51 @@ const Projects = () => {
                                 <li>MongoDB</li>
                             </ul>
                             <div className="flex items-center gap-8">
-                                <Link href="#" ><i className="bi bi-github"></i></Link>
-                                <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link>
+                                <Link href="https://github.com/Oreoluwaibk/oluwatosin0" ><i className="bi bi-github"></i></Link>
+                                <Link href="https://shopoluwatosin0.netlify.app"><i className="bi bi-box-arrow-up-right"></i></Link>
                             </div>
                         </div>
                     </li>
 
                     <li className="flex flex-row-reverse gap-4">
                         <div className="hidden md:block w-3/5 h-72 z-10 relative">
-                            <Image 
-                                src={ProfilePhoto}
-                                alt='Project Image'   
-                                className="object-cover object-right-top w-full opacity-80 h-full"
-                            />
+                            <Carousel 
+                                autoplay={false} 
+                                dots={false}
+                                className="car h-full overflow-y-hidden"
+                                style={{height: "100%"}}
+                                fade
+                                effect="fade"                                
+                            >
+                                <div className="h-full">
+                                    <Image 
+                                        src={Mob1}
+                                        alt='Project Image'   
+                                        className="object-cover object-bottom w-full opacity-80 h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <Image 
+                                        src={Mob2}
+                                        alt='Project Image'   
+                                        className="object-cover object-right-top w-full opacity-80 h-full"
+                                    />
+                                </div>
+                                <div>
+                                    <Image 
+                                        src={Mob3}
+                                        alt='Project Image'   
+                                        className="object-cover object-right-top w-full opacity-80 h-full"
+                                    />
+                                </div>
+                            </Carousel>
+                            
                             <div className="h-full w-full absolute top-0 bg-black opacity-70 transition-opacity duration-[2s] ease-in-out hover:opacity-0"></div>
                         </div>
                         
                         <div className="flex flex-col gap-8 py-8 p-4 md:p-0 rounded-lg shadow-lg md:bg-transparent bg-pri md:border-0 md:gap-1 justify-between w-full md:w-2/5 z-10 relative"> 
 
-                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${ProfilePhoto.src})`}}></div>
+                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${Mob1.src})`}}></div>
 
                             <h4 className="text-2xl italic font-semibold text-gray-300">Movie Review App</h4>
 
@@ -229,12 +280,12 @@ const Projects = () => {
 
                             <ul className="text-sec flex items-center text-sm italic font-semibold gap-2 techused">
                                 <li>React Native</li>
-                                <li>TS-Node</li>
+                                <li>Native-wind</li>
                                 <li>Tailwind css</li>
                             </ul>
                             <div className="flex items-center gap-8">
-                                <Link href="#" ><i className="bi bi-github"></i></Link>
-                                <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link>
+                                <Link href="https://github.com/Oreoluwaibk/Movies-Review-App" ><i className="bi bi-github"></i></Link>
+                                {/* <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link> */}
                             </div>
                         </div>
                     </li>
@@ -242,7 +293,7 @@ const Projects = () => {
                     <li className="flex gap-4">
                         <div className="hidden md:block w-3/5 h-72 z-10 relative">
                             <Image 
-                                src={ProfilePhoto}
+                                src={RCF1}
                                 alt='Project Image'   
                                 className="object-cover object-right-top w-full opacity-80 h-full"
                             />
@@ -251,7 +302,7 @@ const Projects = () => {
                         
                         <div className="flex flex-col gap-8 py-8 p-4 md:p-0 rounded-lg shadow-lg md:bg-transparent bg-pri md:border-0 md:gap-1 justify-between w-full md:w-2/5 z-10 relative">
 
-                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${ProfilePhoto.src})`}}></div>
+                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${RCF1.src})`}}></div>
 
                             <h4 className="text-2xl italic font-semibold text-gray-300">A worship center site</h4>
 
@@ -269,13 +320,21 @@ const Projects = () => {
                             </ul>
 
                             <div className="flex items-center gap-8">
-                                <Link href="#" ><i className="bi bi-github"></i></Link>
-                                <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link>
+                                <Link href="https://github.com/Oreoluwaibk/RCFUCHWEBSITE" ><i className="bi bi-github"></i></Link>
+                                {/* <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link> */}
                             </div>
                         </div>
                     </li>
+
+                   
                 </ul>
-              
+                <a
+                    href='https://www.github.com/Oreoluwaibk' 
+                    target="_blank"
+                    className="block text-gray-400 text-xl italic font-mdeium mt-8 transition-opacity duration-1000 ease-in-out hover:opacity-60 text-center"
+                >
+                    Click to view more
+                </a>
             </div>
         </div>
         <Footer />

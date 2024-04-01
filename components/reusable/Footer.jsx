@@ -41,7 +41,7 @@ const Footer = () => {
                       alt="linkedin logo"
                     />
                 </Link></li>
-                <li className="ml-4"><Link href='#'>
+                <li className="ml-4"><Link href='https://wa.me/+2348132088506' target="_blank">
                     <Image
                       src={Whatsapp}
                       width={20}
