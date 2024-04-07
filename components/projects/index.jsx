@@ -114,7 +114,7 @@ const Projects = () => {
                             </ul>
 
                             <a 
-                                href='https://beta.loystar.co/food' 
+                                href='https://beta.loystar.shop/food' 
                                 target="_blank"
                                 className="block text-gray-400 italic font-mdeium text-sm mt-4 transition-opacity duration-1000 ease-in-out hover:opacity-60"
                             >
@@ -125,7 +125,7 @@ const Projects = () => {
                                 target="_blank"
                                 className="block text-gray-400 italic font-mdeium text-sm mt-4 transition-opacity duration-1000 ease-in-out hover:opacity-60"
                             >
-                                Click to view Merhant dashboard
+                                Click to view Merchant dashboard
                             </a>
                         </div>
                     </li>
@@ -195,7 +195,7 @@ const Projects = () => {
                     <hr className="w-1/2 border-sec" />
                 </div>
                 
-                <ul className="flex flex-col gap-16 md:gap-36 text-gray-300">
+                <ul className="flex flex-col gap-16 md:gap-24 text-gray-300">
                     <li className="flex gap-4">
                         <div className="hidden md:block w-3/5 h-72 z-10 relative">
                             <Image 
@@ -215,7 +215,7 @@ const Projects = () => {
                             <h4 className="text-2xl italic font-semibold text-gray-300">Full fledge Ecommerce webite</h4>
 
                             <div className="bg-sec p-4 w-fit text-sm relative cardpad"><p className="text-white font-thin">a sleek, modern online store designed and developed to deliver seamless shopping experiences. From intuitive product browsing to secure checkout processes, every aspect of the ecommerce platform is meticulously crafted to enhance user satisfaction and drive conversions. Explore the future of online retail with this dynamic showcase of innovation and excellence.</p>
-                            <div className="h-full w-full bg-black absolute top-0 opacity-20" style={{marginLeft: "-16px"}}></div>
+                            {/* <div className="h-full w-full bg-black absolute top-0 opacity-20" style={{marginLeft: "-16px"}}></div> */}
                             </div>
 
                             <ul className="text-sec flex items-center text-sm italic font-semibold gap-2 techused">
@@ -225,7 +225,7 @@ const Projects = () => {
                                 <li>Mongoose</li>
                                 <li>MongoDB</li>
                             </ul>
-                            <div className="flex items-center gap-8">
+                            <div className="flex items-center gap-8 z-10">
                                 <Link href="https://github.com/Oreoluwaibk/oluwatosin0" ><i className="bi bi-github"></i></Link>
                                 <Link href="https://shopoluwatosin0.netlify.app"><i className="bi bi-box-arrow-up-right"></i></Link>
                             </div>
@@ -275,7 +275,7 @@ const Projects = () => {
                             <h4 className="text-2xl italic font-semibold text-gray-300">Movie Review App</h4>
 
                             <div className="bg-sec p-4 w-fit text-sm relative cardpadright"><p className="text-white font-thin">a cutting-edge web review app built for both iOS and Android platforms. Seamlessly blending performance and versatility, this app empowers users to discover and share reviews for their favorite websites. With its sleek design and intuitive navigation, the app provides a seamless browsing experience, fostering engagement and interaction among users.</p>
-                            <div className="h-full w-full bg-black absolute top-0 opacity-20" style={{marginLeft: "-16px"}}></div>
+                            {/* <div className="h-full w-full bg-black absolute top-0 opacity-20" style={{marginLeft: "-16px"}}></div> */}
                             </div>
 
                             <ul className="text-sec flex items-center text-sm italic font-semibold gap-2 techused">
@@ -283,7 +283,7 @@ const Projects = () => {
                                 <li>Native-wind</li>
                                 <li>Tailwind css</li>
                             </ul>
-                            <div className="flex items-center gap-8">
+                            <div className="flex items-center gap-8 z-10">
                                 <Link href="https://github.com/Oreoluwaibk/Movies-Review-App" ><i className="bi bi-github"></i></Link>
                                 {/* <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link> */}
                             </div>
@@ -319,7 +319,7 @@ const Projects = () => {
                                 <li>Mongo DB</li>
                             </ul>
 
-                            <div className="flex items-center gap-8">
+                            <div className="flex items-center gap-8 z-10">
                                 <Link href="https://github.com/Oreoluwaibk/RCFUCHWEBSITE" ><i className="bi bi-github"></i></Link>
                                 {/* <Link href="#"><i className="bi bi-box-arrow-up-right"></i></Link> */}
                             </div>
