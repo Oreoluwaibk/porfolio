@@ -4,7 +4,7 @@ import Header from '../reusable/Header';
 import $ from "jquery";
 import { Carousel } from 'antd';
 import Image from 'next/image';
-import { Mob1, Mob2, Mob3, OneStop, ProfilePhoto, RCF1 } from '@/asset/images';
+import { Mob1, Mob2, Mob3, OneStop, ProfilePhoto, RCF1, School } from '@/asset/images';
 import Link from 'next/link';
 // import { VideoShop } from '@/asset/videos';
 
@@ -228,6 +228,40 @@ const Projects = () => {
                             <div className="flex items-center gap-8 z-10">
                                 <Link href="https://github.com/Oreoluwaibk/oluwatosin0" ><i className="bi bi-github"></i></Link>
                                 <Link href="https://shopoluwatosin0.netlify.app"><i className="bi bi-box-arrow-up-right"></i></Link>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li className="flex gap-4">
+                        <div className="hidden md:block w-3/5 h-72 z-10 relative">
+                            <Image 
+                                src={School}
+                                alt='Project Image'   
+                                className="object-cover object-right-top w-full opacity-80 h-full"
+                            />
+                            <div className="h-full w-full absolute top-0 bg-black opacity-70 transition-opacity duration-[2s] ease-in-out hover:opacity-0"></div>
+                        </div>
+                        
+                        <div className="flex flex-col gap-8 py-8 p-4 md:p-0 rounded-lg shadow-lg md:bg-transparent bg-pri md:border-0 md:gap-1 justify-between w-full md:w-2/5 z-10 relative">
+
+                            <div className="md:hidden absolute top-0 h-full w-full bg-cover opacity-40 left-0 transition-opacity duration-1000 hover:opacity-60" style={{backgroundImage: `url(${School.src})`}}></div>
+
+                            <h4 className="text-2xl italic font-semibold text-gray-300">Academic website</h4>
+
+                            <div className="bg-sec p-4 w-fit text-sm relative cardpad" ><p className="text-white font-thin">I created a comprehensive school website to enhance the educational experience for students, parents, and staff. The website features intuitive navigation, detailed information about academic programs, extracurricular activities, and school events.</p>
+                            <div className="h-full w-full bg-black absolute top-0 opacity-20" style={{marginLeft: "-16px"}}></div>
+                            </div>
+
+                            <ul className="text-sec flex items-center text-sm italic font-semibold gap-2 techused">
+                                <li>Javascript</li>
+                                <li>TypeScript</li>
+                                <li>Nextjs</li>
+                                <li>Tailwind css</li>
+                            </ul>
+
+                            <div className="flex items-center gap-8 z-10">
+                                <Link href="https://github.com/Oreoluwaibk/school-sample-app" ><i className="bi bi-github"></i></Link>
+                                <Link href="https://xyzinternaltionalschool.netlify.app"><i className="bi bi-box-arrow-up-right"></i></Link>
                             </div>
                         </div>
                     </li>

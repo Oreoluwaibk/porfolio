@@ -82,7 +82,7 @@ const Header = ( { active }) => {
                 </li>
             
                 <li className="ml-5">
-                    <a href="/software_engineer.pdf" download="my resume">
+                    <a href="/resume.pdf" download="my resume">
                         <Tooltip 
                             title="click here to download my full resume" 
                             trigger="hover"
@@ -128,7 +128,7 @@ const Header = ( { active }) => {
                         mouseLeaveDelay={0.5}
                         color='#a3847f'
                     >
-                        <a href="/software_engineer.pdf" download="my resume">
+                        <a href="/resume.pdf" download="my resume">
                             <Button 
                                 // onClick={downLoadPdf} 
                                 type="primary" 

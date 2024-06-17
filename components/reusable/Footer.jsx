@@ -9,14 +9,14 @@ const Footer = () => {
     <>
         <div className="static bottom-0 px-8 md:px-52 py-9 w-full">
             <ul className="flex justify-between gap-6 md:justify-start items-center w-full">
-                <li><Link href='#'>
+                {/* <li><Link href='#'>
                     <Image
                         src={Facebook}
                         width={20}
                         height={20}
                         alt="facebook logo"
                     />
-                </Link></li>
+                </Link></li> */}
                 <li className="ml-4"><Link href='https://www.instagram.com/oreoluwaibk' target="_blank">
                     <Image
                       src={Instagram}
