@@ -4,18 +4,18 @@
 
 :root {
     --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: #3c323c;
+    --background-start-rgb: #0D1117;
     --background-end-rgb: #3c323c;
-  }
+}
   
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: 255, 255, 255;
         --background-start-rgb: 0, 0, 0;
         --background-end-rgb: 0, 0, 0;
     }
-}
-  
+} */
+
 body {
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(
@@ -26,6 +26,24 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at 20% 30%, #001f3f, #0a0a0a, #1f1f1f );
+  }
+
+  @keyframes shimmerFade {
+    0%, 100% {
+      opacity: 0.9;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .shimmer-fade {
+    animation: shimmerFade 8s ease-in-out infinite;
+  }
+}
 :where(.css-dev-only-do-not-override-1ltb402).ant-carousel{
     height: 100%;
 }
@@ -33,13 +51,13 @@ body {
 .flex-center{
     @apply flex items-center justify-center
 }
-.button{
+/* .button{
     background-color: #a3847f;
     transition: background-color ease-in 0.7s;
 }
 .button:hover{
     color: #3c323c;
-}
+} */
 /* .description li::before{
     content: "▹";
 } */
@@ -58,10 +76,10 @@ body {
     @apply transition-colors duration-[1s] hover:text-pri
 }
 .menu-link{
-    @apply transition-colors ease-in-out duration-1000 text-sec hover:text-sec-3
+    @apply transition-colors ease-in-out duration-1000 text-text hover:text-accent
 }
 .active{
-    @apply text-sec-5 italic font-semibold
+    @apply text-accent italic font-semibold 
 }
 
 .cardpad{

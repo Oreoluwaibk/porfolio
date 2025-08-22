@@ -1,0 +1,10 @@
+export { default as Vamooze } from "./vamooze.png";
+export { default as Smartsafe } from "./smartsafe.png";
+export { default as Smartlearning } from "./smartlearning.png";
+export { default as Commutor } from "./commutor.png";
+export { default as CommutorDash } from "./commutordash.png";
+export { default as Imovarsity } from "./imovarsity.png";
+export { default as ComWebsite } from "./comwebsite.png";
+
+
+

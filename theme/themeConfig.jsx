@@ -1,14 +1,15 @@
 const theme = {
   token: {
     fontSize: 16,
-    colorPrimary: '#3c323c',
-    colorPrimaryBg: "#3c323c",
+    colorPrimary: '#0D1117',
+    colorPrimaryBg: "#0D1117",
+    primaryBg: "#0D1117"
   },
   components: {
-      Button: {
-        colorPrimary: '#3c323c',
-        colorPrimaryBg: "#3c323c", 
-      }
+    Button: {
+      colorPrimary: '#0D1117',
+      colorPrimaryBg: "#0D1117", 
+    }
   }
 };
 
