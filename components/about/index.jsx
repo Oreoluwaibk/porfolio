@@ -17,7 +17,7 @@ const About = () => {
     return (
     <Container active="about">
         <ProjectLoader type="projects" />
-        {loadingDone && <div className="px-8 md:px-32 pb-8 no-scroll-bar" style={style}>
+        {loadingDone && <div className="px-8 md:px-32 pb-8 no-scroll-bar pt-10" style={style}>
         <div className="flex flex-col-reverse md:flex-row items-center mb-12">
             <Image 
             src={ProfilePhoto} 

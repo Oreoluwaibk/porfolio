@@ -23,7 +23,7 @@ const PageLoader = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1.1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="text-4xl md:text-6xl font-bold text-[#58A6FF]"
+            className="text-4xl text-center md:text-6xl font-bold text-[#58A6FF]"
           >
             Welcome to Oreoluwa's Space
           </motion.h1>

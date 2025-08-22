@@ -56,7 +56,7 @@ const Homepage = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="relative w-[250px] h-[300px] md:w-[400px] md:h-[500px]">
+                <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[500px]">
                   <div className="absolute -top-8  w-full h-full bg-gradient-to-br from-[#1f2937] via-[#58A6FF] to-[#1f2937] rounded-full blur-3xl opacity-30 z-0" />
                   <Image
                     src={ProfilePhoto2.src}
