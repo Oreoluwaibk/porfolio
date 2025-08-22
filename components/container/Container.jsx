@@ -7,7 +7,7 @@ import $ from "jquery";
 import { AnimatePresence, motion } from 'framer-motion';
 
 
-const NavItem = ({ href, label, active, mobile }) => (
+export const NavItem = ({ href, label, active, mobile }) => (
   <li className={mobile ? "ml-0 text-xl mb-4" : "ml-5"}>
     <Link href={href}>
       <span className={`menu-link ${active ? 'active' : ''} text-text`}>{label}</span>

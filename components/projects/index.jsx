@@ -1,22 +1,15 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Header from '../reusable/Header';
-import Footer from '../reusable/Footer';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Carousel } from 'antd';
 import ProjectLoader from '../loaders/ProjectLoader';
 import Container from '../container/Container';
-import Lightbox from 'react-image-lightbox';
-import { OneStop } from '@/asset/images';
 import { Commutor, CommutorDash, ComWebsite, Imovarsity, Smartlearning, Smartsafe, Vamooze } from '@/asset/images/projects';
 
 const Projects = () => {
   const [loadingDone, setLoadingDone] = useState(false);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxImages, setLightboxImages] = useState([]);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoadingDone(true), 2500);
