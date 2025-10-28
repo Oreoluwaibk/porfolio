@@ -60,11 +60,11 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
             <nav className="hidden md:block mr-12 pb-[30px]">
             <ul className="flex gap-4 items-center font-medium">
                 <NavItem href="/about" label="About" active={active === 'about'} />
-                <NavItem href="/experience" label="Experience" active={active === 'experience'} />
+                {/* <NavItem href="/experience" label="Experience" active={active === 'experience'} /> */}
                 <NavItem href="/projects" label="Project" active={active === 'projects'} />
                 {/* <NavItem href="/contact" label="Contact" active={active === 'contact'} /> */}
                 <li>
-                    <a href="/resume.pdf" download="my resume">
+                    <a href="/oreoluwa's-resume.pdf" download="my resume">
                         <Tooltip
                         title="Click to download my full resume"
                         color="#001529"
@@ -97,7 +97,7 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
                     <NavItem href="/projects" label="Experience" active={active === 'experience'} mobile />
                     {/* <NavItem href="/contact" label="Contact" active={active === 'contact'} mobile /> */}
                     <li>
-                        <a href="/resume.pdf" download="my resume">
+                        <a href="/oreoluwa's-resume.pdf" download="my resume">
                             <Tooltip
                             title="Click to download resume"
                             color="#001529"

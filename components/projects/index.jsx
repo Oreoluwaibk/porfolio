@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Carousel } from 'antd';
 import ProjectLoader from '../loaders/ProjectLoader';
 import Container from '../container/Container';
-import { Commutor, CommutorDash, ComWebsite, Imovarsity, Smartlearning, Smartsafe, Vamooze } from '@/asset/images/projects';
+import { AAGolf, Commutor, CommutorDash, ComWebsite, Consult, Imovarsity, Protection, Smartlearning, Smartsafe, Vamooze } from '@/asset/images/projects';
 
 const Projects = () => {
   const [loadingDone, setLoadingDone] = useState(false);
@@ -18,12 +18,12 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Smartlearning',
+      title: 'Smartsafe',
       description:
-        'A custom-built LMS for Smartsafe UK, streamlining student registration, payment, and access to learning materials.',
-      tech: ['EJS', 'Node.js', 'Express', 'jQuery', 'Firebase', 'HTML/CSS'],
-      live: 'https://www.smartlearninguk.com/',
-      images: [Smartlearning],
+        'Corporate website for a UK cybersecurity firm, built for performance and responsiveness.',
+      tech: ['Next.js', 'Tailwind CSS', 'Redux', 'Ant Design', 'TypeScript'],
+      live: 'https://www.smartsafeuk.com/',
+      images: [Smartsafe],
     },
     {
       title: 'Imo Varsity',
@@ -34,12 +34,52 @@ const Projects = () => {
       images: [Imovarsity],
     },
     {
-      title: 'Smartsafe',
+      title: 'Vamooze Platform',
       description:
-        'Corporate website for a UK cybersecurity firm, built for performance and responsiveness.',
-      tech: ['Next.js', 'Tailwind CSS', 'Redux', 'Ant Design', 'TypeScript'],
-      live: 'https://www.smartsafeuk.com/',
-      images: [Smartsafe],
+        'A business monitoring and logistics platform with 6 user roles and real-time tracking.',
+      tech: ['Next.js', 'Socket.io', 'TypeScript', 'Ant Design', 'SASS'],
+      live: 'https://web.vamooze.com',
+      images: [Vamooze],
+    },
+    {
+      title: 'Book Golf Courses - AA Golf',
+      description:
+        'A business monitoring and booking system built under my supervision during my tenure as Lead Developer. I provided technical guidance, reviewed architecture, and oversaw implementation by interns.',
+      tech: ['Next.js', 'TypeScript', 'Ant Design', 'SASS'],
+      live: 'https://aagolf.co.uk/',
+      images: [AAGolf],
+    },
+    {
+      title: 'Data Protection Academy',
+      description:
+        'A simple website for learning and enrolling for cybersecurity courses.',
+      tech: ["wordpress", "Elementor", "PHP", "HTML/CSS"],
+      live: 'https://www.dataprotectionacademy.net/',
+      images: [Protection],
+    },
+    {
+      title: 'Data Protection Consulting',
+      description:
+        'A simple website for describing data protection consulting services.',
+      tech: ["wordpress", "Elementor", "PHP", "HTML/CSS"],
+      live: 'https://www.dataprotectionacademy.net/',
+      images: [Consult],
+    },
+    {
+      title: 'Smartlearning',
+      description:
+        'A custom-built LMS for Smartsafe UK, streamlining student registration, payment, and access to learning materials.',
+      tech: ['React', 'Node.js', 'Express', 'jQuery', 'Firebase', 'HTML/CSS'],
+      live: 'https://www.smartlearninguk.com/',
+      images: [Smartlearning],
+    },
+     {
+      title: 'Oreoluwa Ibikunle Portfolio',
+      description:
+        'A custom-built portofolio website to showcase my skills and projects.',
+      tech: ['Next.js', 'React', 'Firebase', 'Tailwind CSS', 'Ant Design', 'SASS', 'framer-motion'],
+      live: 'https://www.oreoluwaibikunle.com/',
+      images: [Smartlearning],
     },
     {
       title: 'Commutor App',
@@ -65,14 +105,7 @@ const Projects = () => {
       live: 'https://main.dyciktlkjkd8t.amplifyapp.com/auth/login',
       images: [CommutorDash],
     },
-    {
-      title: 'Vamooze Platform',
-      description:
-        'A business monitoring and logistics platform with 6 user roles and real-time tracking.',
-      tech: ['Next.js', 'Socket.io', 'TypeScript', 'Ant Design', 'SASS'],
-      live: 'https://web.vamooze.com',
-      images: [Vamooze],
-    },
+    
   ];
 
   return (

@@ -3,7 +3,7 @@ import Container from '../container/Container';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ProfilePhoto2 } from '@/asset/images';
+import { ProfilePhoto } from '@/asset/images';
 import PageLoader from '../Pageloader';
 
 const Homepage = () => {
@@ -59,7 +59,7 @@ const Homepage = () => {
                 <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[500px]">
                   <div className="absolute -top-8  w-full h-full bg-gradient-to-br from-[#1f2937] via-[#58A6FF] to-[#1f2937] rounded-full blur-3xl opacity-30 z-0" />
                   <Image
-                    src={ProfilePhoto2.src}
+                    src={ProfilePhoto.src}
                     alt="Oreoluwa portrait"
                     fill
                     className="object-cover rounded-[2rem] shadow-lg"

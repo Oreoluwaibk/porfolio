@@ -29,7 +29,8 @@ const About = () => {
             <div className="w-full mb-4 md:mb-0 md:w-2/5 flex flex-col gap-3 text-gray-300">
             <p className="text-3xl font-bold italic">Hey there, I’m Oreoluwa!</p>
             <p className="text-xl font-normal">
-                I’m a full-stack engineer with a strong focus on frontend development. What began as curiosity about how the web works has grown into a career creating elegant, scalable, and impactful digital experiences.
+               What started as a fascination with how websites function has grown into a career dedicated to creating meaningful digital experiences. I’m a Full-Stack Engineer with 3+ years of experience, blending frontend craftsmanship with backend logic to build solutions that are beautiful, intuitive, and scalable.
+                I thrive at the intersection of design and technology, turning ideas into products that people love to use — and ensuring every interaction feels seamless and intentional.
             </p>
             </div>
         </div>
