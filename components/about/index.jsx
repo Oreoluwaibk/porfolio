@@ -3,9 +3,11 @@ import { ProfilePhoto } from '@/asset/images';
 import Image from 'next/image';
 import Container from '../container/Container';
 import ProjectLoader from '../loaders/ProjectLoader';
+import { Button, Modal } from 'antd';
 
 const About = () => {
     const [loadingDone, setLoadingDone] = useState(false);
+    const [ isModalVisible, setIsModalVisible] = useState(false);
     
     useEffect(() => {
         const timer = setTimeout(() => setLoadingDone(true), 2500);
@@ -17,84 +19,137 @@ const About = () => {
     return (
     <Container active="about">
         <ProjectLoader type="projects" />
-        {loadingDone && <div className="px-8 md:px-32 pb-8 no-scroll-bar pt-10" style={style}>
-        <div className="flex flex-col-reverse md:flex-row items-center mb-12">
-            <Image 
-            src={ProfilePhoto} 
-            alt="profile photo of Oreoluwa" 
-            className="rounded-lg object-cover object-right-top md:float-left md:p-4 md:pr-10 w-full md:w-3/5 transition-opacity opacity-0 duration-[2s]"
-            style={{ height: "400px" }}
-            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-            />
-            <div className="w-full mb-4 md:mb-0 md:w-2/5 flex flex-col gap-3 text-gray-300">
-            <p className="text-3xl font-bold italic">Hey there, I’m Oreoluwa!</p>
-            <p className="text-xl font-normal">
-               What started as a fascination with how websites function has grown into a career dedicated to creating meaningful digital experiences. I’m a Full-Stack Engineer with 3+ years of experience, blending frontend craftsmanship with backend logic to build solutions that are beautiful, intuitive, and scalable.
-                I thrive at the intersection of design and technology, turning ideas into products that people love to use — and ensuring every interaction feels seamless and intentional.
-            </p>
+        {<div className="px-8 md:px-32 pb-8 no-scroll-bar pt-10" style={style}>
+            <div className="flex flex-col-reverse md:flex-row items-center mb-12 gap-10">
+                <Image 
+                    src={ProfilePhoto} 
+                    alt="profile photo of Oreoluwa" 
+                    className="rounded-2xl object-cover object-right-top md:float-left w-full md:w-2/5 transition-opacity  duration-[2s] shadow-2xl border border-gray-800"
+                    style={{ height: "450px" }}
+                    // onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                />
+                <div className="w-full mb-4 md:mb-0 md:w-3/5 flex flex-col gap-5 text-gray-300">
+                    <h2 className="text-4xl font-bold text-white">I’m Oreoluwa Ibikunle.</h2>
+                    <h3 className="text-xl font-medium text-[#58A6FF] font-mono tracking-wide">
+                        Software Engineer & Medical Doctor (MBBS)
+                    </h3>
+                    <p className="text-lg leading-relaxed">
+                        I am a uniquely positioned Engineer and Physician dedicated to building high-trust digital infrastructure. With over 3 years of full-stack experience, I specialize in transforming complex data into intuitive, scalable interfaces. 
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                        My background in clinical medicine provides me with a rare perspective on safety, data integrity, and human-centric design. Whether architecting secure dashboards or mentoring the next generation of developers, I drive projects forward with technical craftsmanship and analytical precision.
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div className="text-gray-300">
-            <ul>
-            <li className="mb-8">
-                <h3 className="text-2xl font-bold flex items-center gap-3 mb-4">
-                <i className="bi bi-circle text-sm"></i> Skills & Expertise
-                </h3>
-                <p className="ml-6 mb-3">
-                I specialize in frontend technologies like <strong>React</strong>, <strong>TypeScript</strong>, <strong>Next.js</strong>, and <strong>React Native</strong>. My UI work is powered by <strong>Tailwind CSS</strong>, and I frequently leverage <strong>jQuery</strong> for interactive enhancements.
-                </p>
-                <p className="ml-6 mb-3">
-                On the backend, I work confidently with <strong>Node.js</strong>, <strong>Express</strong>, and <strong>NestJS</strong>, building robust APIs and scalable architectures.
-                </p>
-                <p className="ml-6">
-                I’m also experienced with both SQL and NoSQL databases — including <strong>MongoDB</strong>, <strong>PostgreSQL</strong>, and <strong>MySQL</strong> — using tools like <strong>Mongoose</strong> and <strong>TypeORM</strong> to manage data effectively.
-                </p>
-            </li>
+            <div className="text-gray-300">
+                <ul>
+                    {/* Skills & Expertise */}
+                    <li className="mb-10">
+                        <h3 className="text-2xl font-bold flex items-center gap-3 mb-6 text-white">
+                            <span className="h-2 w-2 rounded-full bg-[#58A6FF]"></span> Core Competencies
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                            <div>
+                                <h4 className="text-[#58A6FF] font-semibold mb-2">Frontend & Mobile</h4>
+                                <p className="text-sm leading-relaxed">
+                                    Expertise in React, TypeScript, Next.js, and React Native. I focus on performance-optimized UI/UX using Tailwind CSS and structured state management.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="text-[#58A6FF] font-semibold mb-2">Backend & Systems</h4>
+                                <p className="text-sm leading-relaxed">
+                                    Confident in Node.js, Express, and NestJS, building secure APIs and role-based access control (RBAC) systems.
+                                </p>
+                                <p className="text-sm leading-relaxed">
+                                    My backend expertise spans Node.js (NestJS/Express) and Python, which I leverage for both robust API development, frontend data processing logic and role-based access control (RBAC) systems. I am also experienced in React Native for cross-platform mobile solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
 
-            <li className="mb-8">
-                <h3 className="text-2xl font-bold flex items-center gap-3 mb-4">
-                    <i className="bi bi-circle text-sm"></i> Experience
-                </h3>
-                <p className="ml-6 mb-3">
-                    Over the years, I’ve led and contributed to the development of diverse web and mobile applications — including e-learning platforms, admin dashboards, and logistics systems. From ideation to deployment, I’ve helped teams deliver user-focused software with clean interfaces and strong architectural foundations.
-                </p>
-                <p className="ml-6">
-                    Beyond development, I’ve had the privilege of training and mentoring over <strong>100 students</strong> in software development — covering everything from frontend fundamentals (HTML, CSS, JavaScript, React) to backend technologies (Node.js, Express, MongoDB). Seeing my mentees grow into confident developers has been one of the most rewarding parts of my journey.
-                </p>
-            </li>
+                    {/* Experience & Leadership */}
+                    <li className="mb-10">
+                        <h3 className="text-2xl font-bold flex items-center gap-3 mb-4 text-white">
+                            <span className="h-2 w-2 rounded-full bg-[#58A6FF]"></span> Professional Impact
+                        </h3>
+                        <p className="ml-6 mb-4 text-lg">
+                            I have led the development of critical platforms including multi-role LMS systems, cybersecurity portals, and live logistics engines. My work at Smartsafe and Loystar has focused on maintaining high availability and security for thousands of active users.
+                        </p>
+                        <p className="ml-6 mb-4 text-lg">
+                            As a Lead Frontend Developer, I’ve architected multi-role systems like SakerTech, utilizing Redux for intricate state management across diverse user archetypes. My work with Ant Design and Material UI ensures that large-scale platforms like ImoVarsity remain intuitive and high-performing.
+                        </p>
+                        <p className="ml-6 text-lg">
+                            By integrating Python into my workflow, I’ve enhanced the data-handling capabilities of logistics engines and cybersecurity portals, ensuring that high-stakes medical and financial data remain accurate and secure.
+                        </p>
+                        <p className="ml-6 text-lg">
+                            Beyond code, I am a committed mentor. I have trained and job-readied over 100 students, translating complex software architectures into digestible learning paths.
+                        </p>
+                    </li>
 
-            <li className="mb-8">
-                <h3 className="text-2xl font-bold flex items-center gap-3 mb-4">
-                <i className="bi bi-circle text-sm"></i> Passion & Motivation
-                </h3>
-                <p className="ml-6">
-                I’m driven by the desire to build tools that improve lives and solve real problems. Whether I'm working solo or collaborating across teams, I’m energized by learning, shipping, and iterating.
-                </p>
-                <p className="ml-6">
-                Outside of tech, I enjoy staying active, exploring ideas through reading, and spending time with people who inspire me.
-                </p>
-            </li>
-
-            <li className="mb-8">
-                <h3 className="text-2xl font-bold flex items-center gap-3 mb-4">
-                <i className="bi bi-circle text-sm"></i> Education & Certifications
-                </h3>
-                <p className="ml-6 mb-2">I hold an <strong>MBBS degree</strong> from the University of Ibadan, where I developed a deep foundation in analytical thinking and attention to detail.</p>
-                <p className="ml-6 mb-2">To complement that background, I’ve earned several certifications, including:</p>
-                <ul className="ml-6 list-disc space-y-1 text-sm">
-                <li>Complete Web Development Bootcamp</li>
-                <li>Ultimate AWS Certified Developer Associate</li>
-                <li>Complete Python Pro Bootcamp</li>
+                    {/* Education & Clinical Foundation */}
+                    <li className="mb-10">
+                        <h3 className="text-2xl font-bold flex items-center gap-3 mb-4 text-white">
+                            <span className="h-2 w-2 rounded-full bg-[#58A6FF]"></span> Clinical Foundation
+                        </h3>
+                        <p className="ml-6 mb-4 text-lg">
+                            I hold an MBBS degree from the University of Ibadan. This medical background informs my engineering approach, instilling a "do no harm" philosophy regarding data privacy and system reliability.
+                        </p>
+                        <div className="ml-6 flex flex-wrap gap-3">
+                            {['AWS Certified Developer', 'Complete Python Pro', 'Web Development Bootcamp', 'UI/UX Design with Figma'].map((cert) => (
+                                <span key={cert} className="px-3 py-1 bg-gray-800 border border-gray-700 rounded-full text-xs font-mono text-gray-400">
+                                    {cert}
+                                </span>
+                            ))}
+                        </div>
+                    </li>
                 </ul>
-            </li>
-            </ul>
 
-            <p className="mt-8">
-            Let’s collaborate and build something amazing. Whether you need a user-friendly web experience, a mobile app, or a scalable backend — I’m ready to help bring your vision to life.
-            </p>
-        </div>
+                <div className="mt-12 p-8 bg-gradient-to-r from-gray-900 to-black rounded-2xl border border-gray-800">
+                    <p className="text-xl font-medium text-white mb-4">Let’s build the future of secure, accessible technology.</p>
+                    <p className="text-gray-400 mb-6">
+                        Whether you need a Lead Engineer for a high-growth startup, a Technical Researcher for AI safety, or a specialized partner for Medical Research and Data Dashboards, I bring the dual-discipline expertise needed to succeed. From complex enterprise systems to intuitive non-tech websites, I ensure every project is built with precision and intent.
+                    </p>
+                    <button  onClick={() => setIsModalVisible(true)} className="px-8 py-3 bg-[#58A6FF] text-black font-bold rounded-lg hover:scale-105 transition-transform">
+                        Get In Touch
+                    </button>
+                </div>
+            </div>
         </div>}
+
+        <Modal
+            title="Let's Connect"
+            open={isModalVisible}
+            onCancel={() => setIsModalVisible(false)}
+            footer={null}
+            centered
+            style={{ backgroundColor: '#111827' }}
+            styles={{ body: { backgroundColor: '#111827', color: 'white' }, content: { backgroundColor: '#111827', color: 'white' }, header: { backgroundColor: '#111827', color: 'white' } }}
+        >
+            <div className="flex flex-col gap-4 p-4">
+                <p className="text-gray-400">Choose the best way to reach me:</p>
+                
+                <a href="mailto:oreoluwa.ibikunle1@gmail.com" className="p-4 border border-gray-800 rounded-lg hover:border-[#58A6FF] flex items-center gap-4 transition-all">
+                <i className="bi bi-envelope text-[#58A6FF]"></i>
+                <div>
+                    <div className="font-bold">Send an Email</div>
+                    <div className="text-xs text-gray-500">For project inquiries or research</div>
+                </div>
+                </a>
+
+                <a href="https://linkedin.com/in/oreoluwa-ibikunle-306761158" target="_blank" className="p-4 border border-gray-800 rounded-lg hover:border-[#58A6FF] flex items-center gap-4 transition-all">
+                <i className="bi bi-linkedin text-[#58A6FF]"></i>
+                <div>
+                    <div className="font-bold">LinkedIn Message</div>
+                    <div className="text-xs text-gray-500">For professional networking</div>
+                </div>
+                </a>
+
+                <div className="mt-4 text-center">
+                <span className="text-xs text-gray-600 font-mono uppercase tracking-widest">Available for select collaborations</span>
+                </div>
+            </div>
+        </Modal>
 
     </Container>)
 }

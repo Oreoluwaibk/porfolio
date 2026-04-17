@@ -26,94 +26,79 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
 
   return (
     <Layout className='bg-prim'>
-        <Header className='bg-[#001f3f] h-[120px] text-text sticky top-0 z-20 px-4 md:px-20'  >
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between px-0 md:pt-[20px] pb-4 relative">
-            {/* Logo and mobile menu toggle */}
-            <div className="flex items-center justify-between md:justify-start pt-8 md:pt-0 pb-0">
-                <Link href="/home">
-                    <Image
-                        src={newLogoNoBackground.src}
-                        width={120}
-                        height={50}
-                        alt="Oreoluwa's logo"
-                        priority
-                        preview={false}
-                    />
-                </Link>
-
-                {/* Mobile menu icon */}
-                <div className="md:hidden">
-                    {showMenu ? <CloseOutlined onClick={handleShowMenu} className="text-3xl" /> : <MenuOutlined className="text-3xl" onClick={handleShowMenu} />}
-                    {/* <Image
-                    src={showMenu ? CancelIcon.src : MenuIcon.src}
-                    alt={showMenu ? 'Close menu' : 'Open menu'}
-                    className="cursor-pointer"
-                    width={40}
-                    height={40}
-                    onClick={handleShowMenu}
-                    preview={false}
-                    /> */}
+        
+        <Header className="bg-black/80 backdrop-blur-md border-b border-gray-800 h-[100px] text-white sticky top-0 z-50 px-4 md:px-20  transition-all duration-300">
+            <div className="flex items-center justify-between h-full max-w-7xl mx-auto">
+                
+                {/* Logo Section */}
+                <div className="flex-shrink-0 mt-6">
+                    <Link href="/home">
+                        <Image
+                            src={newLogoNoBackground.src}
+                            width={100}
+                            height={40}
+                            preview={false}
+                            alt="Oreoluwa's logo"
+                            className="hover:opacity-80 transition-opacity"
+                            priority
+                        />
+                    </Link>
                 </div>
-            </div>
 
-            {/* Desktop nav */}
-            <nav className="hidden md:block mr-12 pb-[30px]">
-            <ul className="flex gap-4 items-center font-medium">
-                <NavItem href="/about" label="About" active={active === 'about'} />
-                {/* <NavItem href="/experience" label="Experience" active={active === 'experience'} /> */}
-                <NavItem href="/projects" label="Project" active={active === 'projects'} />
-                {/* <NavItem href="/contact" label="Contact" active={active === 'contact'} /> */}
-                <li>
-                    <a href="/oreoluwa's-resume.pdf" download="my resume">
-                        <Tooltip
-                        title="Click to download my full resume"
-                        color="#001529"
-                        overlayInnerStyle={{ backgroundColor: "#001529" }}
-                        >
-                        <Button type="primary" className="h-10 w-36 button">
-                            Resume
-                        </Button>
-                        </Tooltip>
-                    </a>
-                </li>
-            </ul>
-            </nav>
-
-            {/* Mobile nav */}
-            <AnimatePresence>
-            {showMenu && (
-                <motion.nav
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="md:hidden absolute top-full left-0 w-full bg-[#001f3f] p-4 z-50 overflow-hidden"
-                id="mobile-menu"
-                aria-label="Mobile navigation"
-                role="navigation"
-                >
-                <ul className="flex flex-col gap-6 font-medium items-center pt-6">
-                    <NavItem href="/about" label="About" active={active === 'about'} mobile />
-                    <NavItem href="/projects" label="Experience" active={active === 'experience'} mobile />
-                    {/* <NavItem href="/contact" label="Contact" active={active === 'contact'} mobile /> */}
-                    <li>
-                        <a href="/oreoluwa's-resume.pdf" download="my resume">
-                            <Tooltip
-                            title="Click to download resume"
-                            color="#001529"
-                            overlayInnerStyle={{ backgroundColor: "#001529" }}
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-8">
+                    <ul className="flex gap-8 items-center font-mono text-sm tracking-tight">
+                        <NavItem href="/about" label="01. About" active={active === 'about'} />
+                        <NavItem href="/experience" label="02. Experience" active={active === 'experience'} />
+                        <NavItem href="/projects" label="03. Projects" active={active === 'projects'} />
+                        <li>
+                        <a href="/oreoluwa-resume.pdf" download>
+                            <Button 
+                            className="bg-transparent border border-[#58A6FF] text-[#58A6FF] hover:bg-[#58A6FF]/10 h-10 px-6 font-bold transition-all rounded"
                             >
-                            <Button type="primary" className="h-12 w-36 button">
-                                Resume
+                            Resume
                             </Button>
-                            </Tooltip>
                         </a>
-                    </li>
-                </ul>
-                </motion.nav>
-            )}
-            </AnimatePresence>
-        </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                {/* Mobile Toggle */}
+                <div className="md:hidden flex items-center">
+                    <button 
+                        onClick={handleShowMenu} 
+                        className="text-[#58A6FF] p-2 focus:outline-none"
+                        aria-label="Toggle Menu"
+                    >
+                        {showMenu ? <CloseOutlined className="text-2xl text-white!" /> : <MenuOutlined className="text-2xl text-white!" />}
+                    </button>
+                </div>
+                <AnimatePresence>
+                {showMenu && (
+                    <motion.nav
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        className="fixed top-0 right-0 h-screen w-[75%] bg-[#0d1117] border-l border-gray-800 shadow-2xl z-50 flex flex-col justify-center items-center md:hidden"
+                    >
+                        <CloseOutlined onClick={() => setShowMenu(false)} className="text-2xl text-[#58A6FF] absolute right-10 top-10" />
+                        <ul className="flex flex-col gap-10 font-mono text-lg items-center">
+                            <NavItem href="/about" label="01. About" active={active === 'about'} onClick={handleShowMenu} mobile />
+                            <NavItem href="/experience" label="02. Experience" active={active === 'experience'} onClick={handleShowMenu} mobile />
+                            <NavItem href="/projects" label="03. Projects" active={active === 'projects'} onClick={handleShowMenu} mobile />
+                            <li className="mt-4">
+                                <a href="/oreoluwa-resume.pdf" download>
+                                    <Button className="h-14 w-44 border border-[#58A6FF] text-[#58A6FF] bg-transparent text-xl font-bold">
+                                    Resume
+                                    </Button>
+                                </a>
+                            </li>
+                        </ul>
+                    </motion.nav>
+                )}
+                </AnimatePresence>
+            </div>
         </Header>
         <Layout>
             {/* <div ref={ref} className='bg-[#0a0a0a] text-text'  {...props}>
@@ -136,22 +121,51 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
 
             {/* sticky bottom-0  */}
         </Layout>
-        <Footer className='bg-[#001f3f] px-20'>
-            <div className="flex items-center gap-6">
-                <Link href='https://www.instagram.com/oreoluwaibk' target="_blank">
-                    <InstagramFilled className='text-xl text-[#fff]' />  
-                </Link>
 
-                <Link href='https://www.github.com/Oreoluwaibk' target="_blank">
-                    <GithubOutlined className='text-xl text-[#fff]' />
-                </Link>
-                <Link href="https://www.linkedin.com/in/oreoluwa-ibikunle-306761158" target="_blank">
-                    <LinkedinFilled className='text-xl text-[#fff]' />
-                </Link>
-                <Link href='https://wa.me/+2348132088506' target="_blank">
-                    <WhatsAppOutlined className='text-xl text-[#fff]' />
-                </Link>
+        <Footer className="bg-black border-t border-gray-800 py-12 px-4 md:px-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            
+            {/* Left Side: Branding & Copyright */}
+            <div className="flex flex-col items-center md:items-start gap-2">
+            <div className="font-mono text-sm text-white font-bold tracking-tighter">
+                OREOLUWA IBIKUNLE <span className="text-[#58A6FF]">MBBS</span>
             </div>
+            <p className="text-gray-500 text-[10px] font-mono uppercase tracking-widest">
+                © 2026 Designed & Built by Oreoluwa
+            </p>
+            </div>
+
+            {/* Center: Social Links with Hover Effects */}
+            <div className="flex items-center gap-8">
+            <Link href="https://www.github.com/Oreoluwaibk" target="_blank" className="group">
+                <GithubOutlined className="text-xl text-gray-400 group-hover:text-[#58A6FF] transition-all transform group-hover:-translate-y-1" />
+            </Link>
+            
+            <Link href="https://www.linkedin.com/in/oreoluwa-ibikunle-306761158" target="_blank" className="group">
+                <LinkedinFilled className="text-xl text-gray-400 group-hover:text-[#58A6FF] transition-all transform group-hover:-translate-y-1" />
+            </Link>
+
+            <Link href="https://wa.me/+2348132088506" target="_blank" className="group">
+                <WhatsAppOutlined className="text-xl text-gray-400 group-hover:text-[#58A6FF] transition-all transform group-hover:-translate-y-1" />
+            </Link>
+
+            <Link href="https://www.instagram.com/oreoluwaibk" target="_blank" className="group">
+                <InstagramFilled className="text-xl text-gray-400 group-hover:text-[#58A6FF] transition-all transform group-hover:-translate-y-1" />
+            </Link>
+            </div>
+
+            {/* Right Side: Tech Stack Credit */}
+            <div className="hidden lg:flex flex-col items-end">
+            <p className="text-gray-500 text-[10px] font-mono uppercase tracking-widest mb-1">Built with</p>
+            <div className="flex gap-3 text-gray-400 text-xs font-mono">
+                <span>Next.js</span>
+                <span className="text-gray-800">/</span>
+                <span>TypeScript</span>
+                <span className="text-gray-800">/</span>
+                <span>Framer Motion</span>
+            </div>
+            </div>
+        </div>
         </Footer>
     </Layout>
     

@@ -1,13 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: #0D1117;
-    --background-end-rgb: #3c323c;
+    --background-end-rgb: #0D1117;
 }
-  
+
+
 /* @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: 255, 255, 255;
@@ -18,39 +18,36 @@
 
 body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background: linear-gradient( to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .bg-gradient-radial {
-    background-image: radial-gradient(circle at 20% 30%, #001f3f, #0a0a0a, #1f1f1f );
-  }
-
-  @keyframes shimmerFade {
-    0%, 100% {
-      opacity: 0.9;
+    .bg-gradient-radial {
+        background-image: radial-gradient(circle at 20% 30%, #001f3f, #0a0a0a, #1f1f1f);
     }
-    50% {
-      opacity: 1;
+    @keyframes shimmerFade {
+        0%,
+        100% {
+            opacity: 0.9;
+        }
+        50% {
+            opacity: 1;
+        }
     }
-  }
-
-  .shimmer-fade {
-    animation: shimmerFade 8s ease-in-out infinite;
-  }
+    .shimmer-fade {
+        animation: shimmerFade 8s ease-in-out infinite;
+    }
 }
-:where(.css-dev-only-do-not-override-1ltb402).ant-carousel{
+
+:where(.css-dev-only-do-not-override-1ltb402).ant-carousel {
     height: 100%;
 }
 
-.flex-center{
+.flex-center {
     @apply flex items-center justify-center
 }
+
+
 /* .button{
     background-color: #a3847f;
     transition: background-color ease-in 0.7s;
@@ -58,58 +55,74 @@ body {
 .button:hover{
     color: #3c323c;
 } */
+
+
 /* .description li::before{
     content: "▹";
 } */
-.code-tool{
+
+.code-tool {
     @apply border-2 border-sec rounded-3xl py-2 px-4 bg-sec cursor-pointer font-semibold text-sm text-nowrap
 }
 
 .show {
     opacity: 1;
 }
-.no-scroll-bar::-webkit-scrollbar{
+
+.no-scroll-bar::-webkit-scrollbar {
     display: none;
 }
-.techused li{
+
+.techused li {
     cursor: pointer;
-    @apply transition-colors duration-[1s] hover:text-pri
-}
-.menu-link{
-    @apply transition-colors ease-in-out duration-1000 text-text hover:text-accent
-}
-.active{
-    @apply text-accent italic font-semibold 
+    /* @apply transition-colors duration-[1s] hover: text-pri */
 }
 
-.cardpad{
+.menu-link {
+    /* @apply transition-colors ease-in-out duration-1000 text-text hover: text-accent */
+}
+
+.active {
+    /* @apply text-accent italic font-semibold */
+}
+
+.cardpad {
     margin-left: -110px;
 }
-.cardpadright{
+
+.cardpadright {
     margin-right: -110px;
 }
-.slideDown{
+
+.slideDown {
     animation: dropdown 8s;
 }
-.drop-down{
+
+.drop-down {
     position: absolute;
     animation: dropdown 8s infinite;
 }
+
 @keyframes dropdown {
-    0%   {top: 0;}
+    0% {
+        top: 0;
+    }
     /* 25%  {top: 5%;} */
     /* 50%  {top: 15%;} */
-    100% {top: 40%;}
+    100% {
+        top: 40%;
+    }
 }
 
 @media (max-width:768px) {
-    .cardpad{
+    .cardpad {
         margin-left: 0px;
     }
-    .cardpadright{
+    .cardpadright {
         margin-right: 0px;
     }
 }
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;

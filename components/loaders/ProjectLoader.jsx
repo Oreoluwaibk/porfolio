@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { BsLightningChargeFill } from 'react-icons/bs'; // optional icon for extra fun
 
-const words = ["Loading Projects", "Brewing Ideas", "Spinning Creativity"];
+const words = ["Loading", "Brewing Ideas", "Spinning Creativity"];
 
 const ProjectLoader = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -13,7 +13,7 @@ const ProjectLoader = () => {
       setCurrentTextIndex((prev) => (prev + 1) % words.length);
     }, 900);
 
-    const timer = setTimeout(() => setIsVisible(false), 2500);
+    const timer = setTimeout(() => setIsVisible(false), 500);
 
     return () => {
       clearInterval(cycleText);

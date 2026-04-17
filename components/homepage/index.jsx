@@ -19,7 +19,7 @@ const Homepage = () => {
   return (
     <>
       <PageLoader />
-      {loadingComplete && (
+      {(
         <Container active="Home">
           <div className="m-0 p-0 relative flex flex-col justify-between min-h-screen bg-black text-white">
             <section className="relative flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-16 overflow-hidden">
@@ -31,22 +31,43 @@ const Homepage = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
               >
-                <h5 className="text-gray-300 text-lg">Hi, I’m glad you’re here.</h5>
-                <h1 className="text-5xl md:text-6xl text-gray-300 font-bold leading-tight">
-                  I’m Oreoluwa Ibikunle,
+                {/* Professional Tagline */}
+                <h5 className="text-[#58A6FF] font-mono text-lg tracking-widest uppercase">
+                  Senior Engineer & Medical Doctor (MBBS)
+                </h5>
+
+                {/* Main Headline */}
+                <h1 className="text-5xl md:text-7xl text-gray-100 font-bold leading-tight">
+                  Oreoluwa Ibikunle.
                 </h1>
-                <h2 className="text-3xl md:text-4xl font-semibold text-[#58A6FF] leading-snug">
-                  I bring your ideas to life — with code, creativity, and intention.
+
+                {/* Value Proposition */}
+                <h2 className="text-2xl md:text-3xl font-semibold text-gray-400 leading-snug">
+                  Building high-trust systems and scalable digital infrastructure at the intersection of <span className="text-[#58A6FF]">Health and Technology.</span>
                 </h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  I’m a passionate software engineer crafting immersive digital experiences that don’t just look good — they work beautifully.
-                  From websites to mobile apps, I help you go from “what if” to “it’s live”.
+
+                {/* Quantitative Bio */}
+                <p className="text-lg text-gray-400 leading-relaxed max-w-xl">
+                  With over 3 years of experience and a background in clinical medicine, I specialize in
+                  crafting secure LMS platforms, complex dashboards, and logistics engines that serve thousands of users.
+                  I bridge technical craftsmanship with clinical precision to solve ambiguous problems.
                 </p>
-                <Link href="/projects">
-                  <button className="mt-4 w-fit px-6 py-3 bg-[#58A6FF] text-black font-semibold rounded hover:bg-white transition">
-                    View My Projects
-                  </button>
-                </Link>
+
+                {/* Call to Actions */}
+                <div className="flex flex-wrap gap-4 mt-4">
+                  <Link href="/projects">
+                    <button className="px-8 py-3 bg-[#58A6FF] text-black font-bold rounded shadow-lg hover:shadow-[#58A6FF]/20 hover:scale-105 transition-all">
+                      View My Projects
+                    </button>
+                  </Link>
+                  
+                  {/* Highlighting the Fellowship/Research fit */}
+                  <Link href="/about">
+                    <button className="px-8 py-3 border border-gray-600 text-gray-300 font-bold rounded hover:bg-gray-800 transition-all">
+                      Research & Background
+                    </button>
+                  </Link>
+                </div>
               </motion.div>
 
               {/* Right Side - Image */}

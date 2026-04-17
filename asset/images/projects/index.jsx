@@ -7,4 +7,6 @@ export { default as Imovarsity } from "./imovarsity.png";
 export { default as ComWebsite } from "./comwebsite.png";
 export { default as Consult } from "./consult.png";
 export { default as Protection } from "./protection.png";
+export { default as SafeHabour } from "./safehabour.png";
+export { default as Portfolio } from "./portfolio.png";
 export { default as AAGolf } from "./aagolf.png";
