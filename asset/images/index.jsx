@@ -5,5 +5,6 @@ export { default as Mob2 } from "./mob2.png";
 export { default as Mob3 } from "./mob3.png";
 export { default as RCF1 } from "./rcf1.png";
 export { default as School } from "./school.png";
+export { default as ImageNew } from "./img.jpeg";
 
 export { default as ProfilePhoto2 } from "./photo.jpg";

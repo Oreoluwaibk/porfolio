@@ -3,7 +3,7 @@ import Container from '../container/Container';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ProfilePhoto } from '@/asset/images';
+import { ImageNew, ProfilePhoto } from '@/asset/images';
 import PageLoader from '../Pageloader';
 
 const Homepage = () => {
@@ -72,12 +72,12 @@ const Homepage = () => {
 
               {/* Right Side - Image */}
               <motion.div
-                className="flex-1 flex items-center justify-end mt-10 md:mt-0"
+                className="flex-1 flex items-center justify-center mt-10 md:mt-0"
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[500px]">
+                <div className="relative w-full h-[300px] md:w-[400px] md:h-[500px]">
                   <div className="absolute -top-8  w-full h-full bg-gradient-to-br from-[#1f2937] via-[#58A6FF] to-[#1f2937] rounded-full blur-3xl opacity-30 z-0" />
                   <Image
                     src={ProfilePhoto.src}

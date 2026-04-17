@@ -6,7 +6,7 @@ const PageLoader = () => {
 
   useEffect(() => {
     // Keep it fast: 1.5s to 2s max for a loader.
-    const timer = setTimeout(() => setIsVisible(false), 1000); 
+    const timer = setTimeout(() => setIsVisible(false), 800); 
     return () => clearTimeout(timer);
   }, []);
 
