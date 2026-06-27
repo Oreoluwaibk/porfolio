@@ -22,9 +22,10 @@ const Experience = () => {
       date: "Feb 2023 – Present",
       category: "Engineering & Leadership",
       responsibilities: [
-        "Architected IMOVarsity, a multi-role dashboard system using Redux for complex state management across 4 distinct user archetypes.",
-        "Modernized legacy LMS platforms using Ant Design and Material UI to ensure high-performance, accessible user interfaces.",
-        "Implemented secure data-handling protocols and optimized frontend performance for platforms serving thousands of active users."
+        "Architected IMOVarsity, a multi-role LMS with course enrollment, tutor analytics, payments, and certificate issuance.",
+        "Built a secure internal Admin Dashboard for user management and analytics across Smartsafe platforms.",
+        "Upgraded Smartlearning LMS with modern UI/UX, dark mode, Framer Motion animations, and automated certificates.",
+        "Modernized Smartsafe's corporate website for clarity, trust, and accessibility (smartsafeuk.com)."
       ],
       stack: ["React", "Next.js", "Redux", "TypeScript", "Ant Design", "Python"]
     },
@@ -48,7 +49,8 @@ const Experience = () => {
       date: "Dec 2022 – May 2025",
       category: "Engineering & Systems",
       responsibilities: [
-        "Developed secure logistics and transaction-heavy dashboards with advanced Role-Based Access Control (RBAC).",
+        "Developed the Loystar B2B/B2C sales platform with products, transactions, reporting, and role-based access for Admin, Manager, and Staff.",
+        "Built the Vamooze white-label delivery/logistics frontend with multi-dashboard, multi-role support.",
         "Optimized backend performance in Node.js and Python, reducing perception of API latency by 40%.",
         "Implemented secure data-handling protocols for high-volume financial and logistics transactions."
       ],
@@ -74,9 +76,9 @@ const Experience = () => {
       date: "Apr 2024 – Aug 2025",
       category: "Engineering & Education",
       responsibilities: [
-        "Contributed to the development of 'Commutor', a project management mobile app with milestone tracking.",
+        "Shipped Commutor — a project management mobile app with milestone tracking, vendor collaboration, and in-app payments (Google Play).",
+        "Co-developed and launched Quikwrk, expanding production mobile deployment experience.",
         "Led frontend training for 4 cohorts (~48 students), achieving an 85% placement rate for graduates.",
-        "Standardized UI components using React and Tailwind CSS for scalable mobile and web development.",
         "Mentored 50+ junior developers through rigorous code reviews and modern JavaScript/Python best practices."
       ],
       stack: ["React", "React Native", "Tailwind CSS", "Git", "Mentorship"]

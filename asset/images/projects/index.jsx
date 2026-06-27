@@ -1,6 +1,8 @@
 export { default as Vamooze } from "./vamooze.png";
 export { default as Smartsafe } from "./smartsafe.png";
-export { default as Smartlearning } from "./smartlearning.png";
+export { default as Smartlearning } from "./smartlearning-home-dark.png";
+export { default as SmartlearningDashboard } from "./smartlearning-dashboard.png";
+export { default as SmartlearningLight } from "./smartlearning-home-light.png";
 export { default as Commutor } from "./commutor.png";
 export { default as CommutorDash } from "./commutordash.png";
 export { default as Imovarsity } from "./imovarsity.png";
@@ -10,3 +12,5 @@ export { default as Protection } from "./protection.png";
 export { default as SafeHabour } from "./safehabour.png";
 export { default as Portfolio } from "./portfolio.png";
 export { default as AAGolf } from "./aagolf.png";
+export { default as Loystar } from "./loystar.png";
+export { default as Quikwrk } from "./quikwrk.png";

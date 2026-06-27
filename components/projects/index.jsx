@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Carousel } from 'antd';
 import ProjectLoader from '../loaders/ProjectLoader';
 import Container from '../container/Container';
-import { AAGolf, Commutor, CommutorDash, ComWebsite, Consult, Imovarsity, Portfolio, Protection, SafeHabour, Smartlearning, Smartsafe, Vamooze } from '@/asset/images/projects';
+import { AAGolf, Commutor, CommutorDash, Imovarsity, Loystar, Portfolio, Protection, Quikwrk, SafeHabour, Smartlearning, SmartlearningDashboard, SmartlearningLight, Smartsafe, Vamooze } from '@/asset/images/projects';
 
 const Projects = () => {
   const [loadingDone, setLoadingDone] = useState(false);
@@ -36,6 +36,15 @@ const Projects = () => {
       category: 'Enterprise / Logistics'
     },
     {
+      title: 'Loystar Sales Platform',
+      description:
+        'A B2B/B2C sales platform for product catalogues, transactions, and reporting. Built role-based dashboards for Admin, Manager, and Staff with secure access controls across high-volume sales workflows.',
+      tech: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'RBAC', 'Ant Design'],
+      live: 'https://web.loystar.co',
+      images: [Loystar],
+      category: 'Enterprise / Sales'
+    },
+    {
       title: 'Smartsafe Cybersecurity Portal',
       description:
         'Corporate infrastructure for a UK cybersecurity firm. Engineered for maximum performance and security, featuring a customized implementation of Ant Design to match corporate branding and Core Web Vitals excellence.',
@@ -43,6 +52,14 @@ const Projects = () => {
       live: 'https://www.smartsafeuk.com/',
       images: [Smartsafe],
       category: 'Cybersecurity'
+    },
+    {
+      title: 'Smartsafe Admin Dashboard',
+      description:
+        'A secure, high-performance internal dashboard for user management and analytics. Built for Smartsafe operations with role-based access, real-time reporting, and a scalable interface for managing thousands of platform users.',
+      tech: ['React', 'Next.js', 'TypeScript', 'Redux', 'Ant Design', 'Node.js'],
+      images: [CommutorDash],
+      category: 'Internal Tooling'
     },
     {
       title: 'Imo Varsity LMS',
@@ -65,10 +82,18 @@ const Projects = () => {
     {
       title: 'Commutor Mobile Ecosystem',
       description:
-        'A cross-platform project management suite connecting vendors and users. Features a specialized dashboard with project tracking analytics and a React Native mobile app for on-the-go collaboration.',
+        'A cross-platform project management suite connecting vendors and users. Shipped to Google Play with milestone tracking, vendor collaboration, and in-app payments for on-the-go project management.',
       tech: ['React Native', 'Next.js', 'Firebase', 'TypeScript', 'Tailwind CSS'],
       live: 'https://www.commutor.net/',
       images: [Commutor],
+      category: 'Productivity / Mobile'
+    },
+    {
+      title: 'Quikwrk Mobile App',
+      description:
+        'Co-developed and launched a production React Native mobile app, expanding hands-on experience in mobile deployment, performance tuning, and shipping user-facing features to app stores.',
+      tech: ['React Native', 'TypeScript', 'Firebase', 'Mobile Deployment'],
+      images: [Quikwrk],
       category: 'Productivity / Mobile'
     },
     {
@@ -77,7 +102,7 @@ const Projects = () => {
         'A bespoke internal LMS built for Smartsafe UK. Focused on streamlining student registration and learning material access, featuring a robust custom-built dashboard for administrative oversight.',
       tech: ['React', 'Node.js', 'Python', 'Firebase', 'jQuery', 'Material UI'],
       live: 'https://www.smartlearninguk.com/',
-      images: [Smartlearning],
+      images: [Smartlearning, SmartlearningDashboard, SmartlearningLight],
       category: 'Internal Tooling'
     },
     {
@@ -133,13 +158,29 @@ const Projects = () => {
               >
                 {/* Image Container with Hover Zoom */}
                 <div className="overflow-hidden rounded-xl bg-[#111827] border border-gray-800 transition-all duration-500 group-hover:border-[#58A6FF]/50 group-hover:shadow-[0_0_30px_rgba(88,166,255,0.1)]">
-                  <Image
-                    src={project.images[0]}
-                    alt={project.title}
-                    className="object-cover w-full h-64 md:h-80 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                    width={800}
-                    height={400}
-                  />
+                  {project.images.length > 1 ? (
+                    <Carousel autoplay dots className="project-carousel">
+                      {project.images.map((image, imageIdx) => (
+                        <div key={imageIdx}>
+                          <Image
+                            src={image}
+                            alt={`${project.title} screenshot ${imageIdx + 1}`}
+                            className="object-cover w-full h-64 md:h-80 opacity-80 group-hover:opacity-100"
+                            width={800}
+                            height={400}
+                          />
+                        </div>
+                      ))}
+                    </Carousel>
+                  ) : (
+                    <Image
+                      src={project.images[0]}
+                      alt={project.title}
+                      className="object-cover w-full h-64 md:h-80 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                      width={800}
+                      height={400}
+                    />
+                  )}
                 </div>
 
                 {/* Content Section */}
