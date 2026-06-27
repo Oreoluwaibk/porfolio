@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Carousel } from 'antd';
 import ProjectLoader from '../loaders/ProjectLoader';
 import Container from '../container/Container';
-import { AAGolf, Commutor, CommutorDash, Imovarsity, Loystar, Portfolio, Protection, Quikwrk, SafeHabour, Smartlearning, SmartlearningDashboard, SmartlearningLight, Smartsafe, Vamooze } from '@/asset/images/projects';
+import { AAGolf, Commutor, Imovarsity, Loystar, Portfolio, Protection, Quikwrk, SafeHabour, Smartlearning, SmartlearningDashboard, SmartlearningLight, Smartsafe, SmartsafeAdminCourses, SmartsafeAdminOverview, SmartsafeAdminPta, SmartsafeAdminUsers, Vamooze } from '@/asset/images/projects';
 
 const Projects = () => {
   const [loadingDone, setLoadingDone] = useState(false);
@@ -58,7 +58,7 @@ const Projects = () => {
       description:
         'A secure, high-performance internal dashboard for user management and analytics. Built for Smartsafe operations with role-based access, real-time reporting, and a scalable interface for managing thousands of platform users.',
       tech: ['React', 'Next.js', 'TypeScript', 'Redux', 'Ant Design', 'Node.js'],
-      images: [CommutorDash],
+      images: [SmartsafeAdminOverview, SmartsafeAdminCourses, SmartsafeAdminPta, SmartsafeAdminUsers],
       category: 'Internal Tooling'
     },
     {
