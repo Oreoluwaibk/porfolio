@@ -21,8 +21,14 @@ import {
   OiQuestionWebsite,
   Portfolio,
   Protection,
-  Quikwrk,
   QuikwrkAdmin,
+  QuikwrkCleaning,
+  QuikwrkHome,
+  QuikwrkPassword,
+  QuikwrkProfile,
+  QuikwrkRequest,
+  QuikwrkSignup,
+  QuikwrkSignupMockup,
   QuikwrkWebsite,
   SafeHabour,
   SakerTech,
@@ -82,7 +88,16 @@ const Projects = () => {
         'Production React Native mobile app for hiring local artisans and service providers. Covers onboarding, job requests, vendor matching, and payments for on-demand work.',
       tech: ['React Native', 'TypeScript', 'Firebase', 'Mobile Deployment'],
       live: 'https://play.google.com/store/apps/details?id=com.oreoluwaibk.handiwork',
-      images: [Quikwrk, QuikwrkWebsite],
+      images: [
+        QuikwrkHome,
+        QuikwrkSignupMockup,
+        QuikwrkSignup,
+        QuikwrkProfile,
+        QuikwrkCleaning,
+        QuikwrkRequest,
+        QuikwrkPassword,
+      ],
+      imageFit: 'contain',
       category: 'Marketplace / Mobile',
     },
     {
@@ -240,6 +255,8 @@ const Projects = () => {
   ];
 
   const renderMedia = (project) => {
+    const fitClass = project.imageFit === 'contain' ? 'object-contain bg-[#0d1117]' : 'object-cover';
+
     if (!project.images?.length) {
       return (
         <div className="relative flex h-64 md:h-80 w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#0d1117] via-[#111827] to-[#0a1628]">
@@ -264,7 +281,7 @@ const Projects = () => {
               <Image
                 src={image}
                 alt={`${project.title} screenshot ${imageIdx + 1}`}
-                className="object-cover w-full h-64 md:h-80 opacity-80 group-hover:opacity-100"
+                className={`${fitClass} w-full h-64 md:h-80 opacity-80 group-hover:opacity-100`}
                 width={800}
                 height={400}
               />
@@ -278,7 +295,7 @@ const Projects = () => {
       <Image
         src={project.images[0]}
         alt={project.title}
-        className="object-cover w-full h-64 md:h-80 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+        className={`${fitClass} w-full h-64 md:h-80 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100`}
         width={800}
         height={400}
       />
