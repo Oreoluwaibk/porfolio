@@ -63,6 +63,7 @@ const Projects = () => {
       description:
         'Cross-platform study app where students upload course materials, generate AI practice questions, run timed tests, and track progress. Paired with the Question Bank website and admin dashboard.',
       tech: ['React Native', 'TypeScript', 'AI Generation', 'Mobile'],
+      live: 'https://play.google.com/store/apps/details?id=com.oreoluwacreatives.questionapp',
       images: [OiQuestionIcon, OiQuestionWebsite],
       category: 'EdTech / Mobile',
     },
@@ -80,6 +81,7 @@ const Projects = () => {
       description:
         'Production React Native mobile app for hiring local artisans and service providers. Covers onboarding, job requests, vendor matching, and payments for on-demand work.',
       tech: ['React Native', 'TypeScript', 'Firebase', 'Mobile Deployment'],
+      live: 'https://play.google.com/store/apps/details?id=com.oreoluwaibk.handiwork',
       images: [Quikwrk, QuikwrkWebsite],
       category: 'Marketplace / Mobile',
     },
