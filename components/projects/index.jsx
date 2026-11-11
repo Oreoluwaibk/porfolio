@@ -8,6 +8,12 @@ import ProjectLoader from '../loaders/ProjectLoader';
 import Container from '../container/Container';
 import {
   AAGolf,
+  BioClerkHero,
+  BioClerkModes,
+  BioClerkPrivacy,
+  BookReviewCatalog,
+  BookReviewReviews,
+  BookReviewStudy,
   Commutor,
   CommutorDash,
   ComWebsite,
@@ -45,15 +51,34 @@ import {
 } from '@/asset/images/projects';
 
 const Projects = () => {
+  // Ordered for employment impact: health+AI flagship, shipped products, enterprise systems, then supporting work.
   const projects = [
     {
-      title: 'OI Question Bank Website',
+      title: 'BioClerk',
       description:
-        'Marketing and support site for Question Bank — an AI study product that turns PDFs and DOCX notes into timed practice tests. Built with Next.js for store downloads, legal pages, and product onboarding.',
-      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Netlify'],
-      live: 'https://oiquestionbank.netlify.app',
-      images: [OiQuestionWebsite],
-      category: 'EdTech / Website',
+        'Privacy-first desktop dictation product. On-device speech recognition turns spoken sessions into structured notes without sending audio off-machine — listen-first or live modes, encrypted at rest, optional sharing, and Paystack licensing.',
+      tech: ['Desktop App', 'On-device ASR', 'Privacy Engineering', 'Paystack'],
+      live: 'https://bioclerk.com/',
+      images: [BioClerkHero, BioClerkModes, BioClerkPrivacy],
+      category: 'Product / Privacy',
+    },
+    {
+      title: 'Tandermis',
+      description:
+        'Research contribution platform for AI-assisted skin condition detection. Includes auth, contributor opt-in, team invites, research forms, payments, and a contributor dashboard.',
+      tech: ['Next.js', 'TypeScript', 'Redux', 'Ant Design', 'Payments'],
+      live: 'https://tandermis.netlify.app',
+      images: [Tandermis],
+      category: 'AI / Research Platform',
+    },
+    {
+      title: 'OI Question Bank Mobile App',
+      description:
+        'Cross-platform study app where students upload course materials, generate AI practice questions, run timed tests, and track progress. Shipped to Google Play with a paired website and admin dashboard.',
+      tech: ['React Native', 'TypeScript', 'AI Generation', 'Mobile'],
+      live: 'https://play.google.com/store/apps/details?id=com.oreoluwacreatives.questionapp',
+      images: [OiQuestionIcon, OiQuestionWebsite],
+      category: 'EdTech / Mobile',
     },
     {
       title: 'OI Question Bank Admin Dashboard',
@@ -65,27 +90,27 @@ const Projects = () => {
       category: 'EdTech / Dashboard',
     },
     {
-      title: 'OI Question Bank Mobile App',
+      title: 'OI Question Bank Website',
       description:
-        'Cross-platform study app where students upload course materials, generate AI practice questions, run timed tests, and track progress. Paired with the Question Bank website and admin dashboard.',
-      tech: ['React Native', 'TypeScript', 'AI Generation', 'Mobile'],
-      live: 'https://play.google.com/store/apps/details?id=com.oreoluwacreatives.questionapp',
-      images: [OiQuestionIcon, OiQuestionWebsite],
-      category: 'EdTech / Mobile',
+        'Marketing and support site for Question Bank — an AI study product that turns PDFs and DOCX notes into timed practice tests. Built with Next.js for store downloads, legal pages, and product onboarding.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Netlify'],
+      live: 'https://oiquestionbank.netlify.app',
+      images: [OiQuestionWebsite],
+      category: 'EdTech / Website',
     },
     {
-      title: 'Quikwrk Website',
+      title: 'Safe Harbour',
       description:
-        'Public marketing site for Quikwrk — connecting users with trusted artisans and vendors. Features product storytelling, key features, team, and support/legal pages for app discovery.',
-      tech: ['Next.js', 'TypeScript', 'Ant Design', 'Framer Motion'],
-      live: 'https://quikwrk.netlify.app',
-      images: [QuikwrkWebsite],
-      category: 'Marketplace / Website',
+        'A high-security marketplace and escrow platform designed for secure digital transactions. Engineered a custom escrow logic system using Python for backend validation and Redux to manage complex multi-step transaction states, ensuring zero-trust security for buyers and sellers.',
+      tech: ['React', 'Redux', 'Python', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
+      live: 'https://www.seosafeharbour.com/',
+      images: [SafeHabour],
+      category: 'FinTech / Security',
     },
     {
       title: 'Quikwrk Mobile App',
       description:
-        'Production React Native mobile app for hiring local artisans and service providers. Covers onboarding, job requests, vendor matching, and payments for on-demand work.',
+        'Production React Native mobile app for hiring local artisans and service providers. Covers onboarding, job requests, vendor matching, and payments for on-demand work — live on Google Play.',
       tech: ['React Native', 'TypeScript', 'Firebase', 'Mobile Deployment'],
       live: 'https://play.google.com/store/apps/details?id=com.oreoluwaibk.handiwork',
       images: [
@@ -110,40 +135,13 @@ const Projects = () => {
       category: 'Marketplace / Dashboard',
     },
     {
-      title: 'Tandermis',
+      title: 'Quikwrk Website',
       description:
-        'Dermatology research platform helping contributors and clinicians join AI-assisted skin disease detection. Includes auth, contributor opt-in, team invites, research forms, payments, and a contributor dashboard.',
-      tech: ['Next.js', 'TypeScript', 'Redux', 'Ant Design', 'Payments'],
-      live: 'https://tandermis.netlify.app',
-      images: [Tandermis],
-      category: 'HealthTech / Research',
-    },
-    {
-      title: 'Isioma Anis',
-      description:
-        'Personal brand and content platform for writer, speaker, and creative entrepreneur Isioma Anis (Isioma Aniugbo). Features The Reflecting Room, reflections, bookshelf, projects, and contact — pause, think, grow.',
-      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Content Site'],
-      live: 'https://isiomaanis.com',
-      images: [IsiomaMockup, IsiomaHero],
-      category: 'Brand / Content',
-    },
-    {
-      title: 'SakerTech Multi-Role Dashboard',
-      description:
-        'Multi-role education operations dashboard for distinct user archetypes — students, front office, content, assessments, and question-bank management — with analytics and certificate workflows.',
-      tech: ['Next.js', 'TypeScript', 'Redux', 'Ant Design', 'RBAC'],
-      live: 'https://saker-tech.netlify.app',
-      images: [SakerTech],
-      category: 'Enterprise / Dashboard',
-    },
-    {
-      title: 'Safe Harbour',
-      description:
-        'A high-security marketplace and escrow platform designed for secure digital transactions. Engineered a custom escrow logic system using Python for backend validation and Redux to manage complex multi-step transaction states, ensuring zero-trust security for buyers and sellers.',
-      tech: ['React', 'Redux', 'Python', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
-      live: 'https://www.seosafeharbour.com/',
-      images: [SafeHabour],
-      category: 'FinTech / Security',
+        'Public marketing site for Quikwrk — connecting users with trusted artisans and vendors. Features product storytelling, key features, team, and support/legal pages for app discovery.',
+      tech: ['Next.js', 'TypeScript', 'Ant Design', 'Framer Motion'],
+      live: 'https://quikwrk.netlify.app',
+      images: [QuikwrkWebsite],
+      category: 'Marketplace / Website',
     },
     {
       title: 'Vamooze Logistics Ecosystem',
@@ -164,13 +162,13 @@ const Projects = () => {
       category: 'Enterprise / Sales',
     },
     {
-      title: 'Smartsafe Cybersecurity Portal',
+      title: 'SakerTech Multi-Role Dashboard',
       description:
-        'Corporate infrastructure for a UK cybersecurity firm. Engineered for maximum performance and security, featuring a customized implementation of Ant Design to match corporate branding and Core Web Vitals excellence.',
-      tech: ['Next.js', 'Tailwind CSS', 'Redux', 'Ant Design', 'TypeScript'],
-      live: 'https://www.smartsafeuk.com/',
-      images: [Smartsafe],
-      category: 'Cybersecurity',
+        'Multi-role education operations dashboard for distinct user archetypes — students, front office, content, assessments, and question-bank management — with analytics and certificate workflows.',
+      tech: ['Next.js', 'TypeScript', 'Redux', 'Ant Design', 'RBAC'],
+      live: 'https://saker-tech.netlify.app',
+      images: [SakerTech],
+      category: 'Enterprise / Dashboard',
     },
     {
       title: 'Smartsafe Admin Dashboard',
@@ -181,6 +179,15 @@ const Projects = () => {
       category: 'Internal Tooling',
     },
     {
+      title: 'Smartsafe Cybersecurity Portal',
+      description:
+        'Corporate infrastructure for a UK cybersecurity firm. Engineered for maximum performance and security, featuring a customized implementation of Ant Design to match corporate branding and Core Web Vitals excellence.',
+      tech: ['Next.js', 'Tailwind CSS', 'Redux', 'Ant Design', 'TypeScript'],
+      live: 'https://www.smartsafeuk.com/',
+      images: [Smartsafe],
+      category: 'Cybersecurity',
+    },
+    {
       title: 'Imo Varsity LMS',
       description:
         'A massive-scale Learning Management System. Built a comprehensive tutor-to-student marketplace featuring automated assignment grading, course progress analytics, and secure payment integrations.',
@@ -188,6 +195,15 @@ const Projects = () => {
       live: 'https://imovarsity.com/',
       images: [Imovarsity],
       category: 'Education Tech',
+    },
+    {
+      title: 'OI Book Review',
+      description:
+        'A reading and Scripture study shelf — search the catalog, preview editions, track progress, write public reviews, and keep private or shared Bible studies by theme and subject.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Auth', 'Netlify'],
+      live: 'https://oibookreviewapp.netlify.app/',
+      images: [BookReviewCatalog, BookReviewStudy, BookReviewReviews],
+      category: 'Product / Content',
     },
     {
       title: 'AA Golf Booking System',
@@ -224,6 +240,15 @@ const Projects = () => {
       live: 'https://www.smartlearninguk.com/',
       images: [Smartlearning, SmartlearningDashboard, SmartlearningLight],
       category: 'Internal Tooling',
+    },
+    {
+      title: 'Isioma Anis',
+      description:
+        'Personal brand and content platform for writer, speaker, and creative entrepreneur Isioma Anis (Isioma Aniugbo). Features The Reflecting Room, reflections, bookshelf, projects, and contact — pause, think, grow.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Content Site'],
+      live: 'https://isiomaanis.com',
+      images: [IsiomaMockup, IsiomaHero],
+      category: 'Brand / Content',
     },
     {
       title: 'Data Protection Consulting',
@@ -317,8 +342,8 @@ const Projects = () => {
                 Selected Works.
               </motion.h1>
               <p className="text-gray-400 text-lg leading-relaxed">
-                A fuller catalogue of shipped products — from OI Question Bank and Quikwrk
-                to Tandermis, Isioma Anis, enterprise dashboards, and health-tech platforms.
+                Selected production work — platforms, mobile apps, and products shipped for
+                real users. Strongest systems and shipped releases first.
               </p>
             </header>
 

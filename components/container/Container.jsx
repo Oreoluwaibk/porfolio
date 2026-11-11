@@ -1,15 +1,14 @@
 import React, { forwardRef, useState } from 'react';
-import { Button, Image, Layout, Tooltip } from "antd";
+import { Button, Image, Layout } from "antd";
 import Link from 'next/link';
 import { newLogoNoBackground } from '@/asset/logos';
 import { CloseOutlined, GithubOutlined, InstagramFilled, LinkedinFilled, MenuOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import $ from "jquery";
 import { AnimatePresence, motion } from 'framer-motion';
 
 
-export const NavItem = ({ href, label, active, mobile }) => (
+export const NavItem = ({ href, label, active, mobile, onClick }) => (
   <li className={mobile ? "ml-0 text-xl mb-4" : "ml-5"}>
-    <Link href={href}>
+    <Link href={href} onClick={onClick}>
       <span className={`menu-link ${active ? 'active' : ''} text-text`}>{label}</span>
     </Link>
   </li>
@@ -19,10 +18,8 @@ const { Header, Footer } = Layout;
 
 const Container = forwardRef(({ children, active, ...props }, ref) => {
     const [ showMenu, setShowMenu ] = useState(false);
-    const handleShowMenu = () => {
-        setShowMenu(!showMenu);
-        $("#menu").slideToggle(1000); 
-    }
+    const closeMenu = () => setShowMenu(false);
+    const handleShowMenu = () => setShowMenu((open) => !open);
 
   return (
     <Layout className='bg-prim'>
@@ -32,7 +29,7 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
                 
                 {/* Logo Section */}
                 <div className="flex-shrink-0 mt-6">
-                    <Link href="/home">
+                    <Link href="/">
                         <Image
                             src={newLogoNoBackground.src}
                             width={100}
@@ -73,33 +70,53 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
                         {showMenu ? <CloseOutlined className="text-2xl text-white!" /> : <MenuOutlined className="text-2xl text-white!" />}
                     </button>
                 </div>
-                <AnimatePresence>
-                {showMenu && (
-                    <motion.nav
-                        initial={{ x: "100%" }}
-                        animate={{ x: 0 }}
-                        exit={{ x: "100%" }}
-                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed top-0 right-0 h-screen w-[75%] bg-[#0d1117] border-l border-gray-800 shadow-2xl z-50 flex flex-col justify-center items-center md:hidden"
-                    >
-                        <CloseOutlined onClick={() => setShowMenu(false)} className="text-2xl text-[#58A6FF] absolute right-10 top-10" />
-                        <ul className="flex flex-col gap-10 font-mono text-lg items-center">
-                            <NavItem href="/about" label="01. About" active={active === 'about'} onClick={handleShowMenu} mobile />
-                            <NavItem href="/experience" label="02. Experience" active={active === 'experience'} onClick={handleShowMenu} mobile />
-                            <NavItem href="/projects" label="03. Projects" active={active === 'projects'} onClick={handleShowMenu} mobile />
-                            <li className="mt-4">
-                                <a href="/oreoluwa-resume.pdf" download>
-                                    <Button className="h-14 w-44 border border-[#58A6FF] text-[#58A6FF] bg-transparent text-xl font-bold">
-                                    Resume
-                                    </Button>
-                                </a>
-                            </li>
-                        </ul>
-                    </motion.nav>
-                )}
-                </AnimatePresence>
             </div>
         </Header>
+
+        <AnimatePresence>
+          {showMenu && (
+            <>
+              <motion.button
+                type="button"
+                aria-label="Close menu"
+                className="fixed inset-0 z-[60] bg-black/60 md:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25, ease: 'easeOut' }}
+                onClick={closeMenu}
+              />
+              <motion.nav
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
+                className="fixed top-0 right-0 z-[70] flex h-[100dvh] w-[min(78vw,20rem)] flex-col items-center justify-center border-l border-gray-800 bg-[#0d1117] shadow-2xl md:hidden will-change-transform"
+              >
+                <button
+                  type="button"
+                  onClick={closeMenu}
+                  className="absolute right-8 top-8 text-[#58A6FF]"
+                  aria-label="Close menu"
+                >
+                  <CloseOutlined className="text-2xl" />
+                </button>
+                <ul className="flex flex-col items-center gap-10 font-mono text-lg">
+                  <NavItem href="/about" label="01. About" active={active === 'about'} onClick={closeMenu} mobile />
+                  <NavItem href="/experience" label="02. Experience" active={active === 'experience'} onClick={closeMenu} mobile />
+                  <NavItem href="/projects" label="03. Projects" active={active === 'projects'} onClick={closeMenu} mobile />
+                  <li className="mt-4">
+                    <a href="/oreoluwa-resume.pdf" download onClick={closeMenu}>
+                      <Button className="h-14 w-44 border border-[#58A6FF] text-[#58A6FF] bg-transparent text-xl font-bold">
+                        Resume
+                      </Button>
+                    </a>
+                  </li>
+                </ul>
+              </motion.nav>
+            </>
+          )}
+        </AnimatePresence>
         <Layout>
             {/* <div ref={ref} className='bg-[#0a0a0a] text-text'  {...props}>
                 {children}
@@ -128,7 +145,7 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
             {/* Left Side: Branding & Copyright */}
             <div className="flex flex-col items-center md:items-start gap-2">
             <div className="font-mono text-sm text-white font-bold tracking-tighter">
-                OREOLUWA IBIKUNLE <span className="text-[#58A6FF]">MBBS</span>
+                OREOLUWA IBIKUNLE <span className="text-[#58A6FF]">SWE</span>
             </div>
             <p className="text-gray-500 text-[10px] font-mono uppercase tracking-widest">
                 © 2026 Designed & Built by Oreoluwa

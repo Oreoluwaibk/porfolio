@@ -37,7 +37,7 @@ const NotFound = () => {
           transition={{ delay: 0.9 }}
         >
           <Link
-            href="/home"
+            href="/"
             className="bg-[#58A6FF] hover:bg-[#4794dd] transition-colors duration-300 text-black font-semibold py-3 px-6 rounded-lg"
           >
             Go Home

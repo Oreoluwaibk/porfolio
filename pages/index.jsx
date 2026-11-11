@@ -1,12 +1,8 @@
 import React from 'react';
-import ProgressBar from '@/components/progressbar';
-import AnimatedIntroText from '@/components/progressbar/Loader';
+import Homepage from '@/components/homepage';
 
+const Index = () => {
+  return <Homepage />;
+};
 
-const index = () => {
-  return (
-    <AnimatedIntroText />
-  )
-}
-
-export default index
+export default Index;
