@@ -18,8 +18,9 @@ const About = () => {
               src={ProfilePhoto}
               alt="Oreoluwa Ibikunle"
               fill
+              sizes="176px"
               className="object-cover object-top"
-              priority
+              loading="eager"
             />
           </div>
 
@@ -171,6 +172,19 @@ const About = () => {
             <div>
               <div className="font-bold">LinkedIn Message</div>
               <div className="text-xs text-gray-500">For professional networking</div>
+            </div>
+          </a>
+
+          <a
+            href="https://wa.me/2348132088506"
+            target="_blank"
+            rel="noreferrer"
+            className="p-4 border border-gray-800 rounded-lg hover:border-[#58A6FF] flex items-center gap-4 transition-all"
+          >
+            <i className="bi bi-whatsapp text-[#58A6FF]" />
+            <div>
+              <div className="font-bold">Chat on WhatsApp</div>
+              <div className="text-xs text-gray-500">For a quick conversation</div>
             </div>
           </a>
 

@@ -105,11 +105,12 @@ const Homepage = () => {
                 <div className="relative overflow-hidden rounded-3xl border border-gray-800 bg-[#0d1117]/90 backdrop-blur-sm">
                   <div className="relative h-64 sm:h-72 w-full">
                     <Image
-                      src={ProfilePhoto.src}
+                      src={ProfilePhoto}
                       alt="Oreoluwa Ibikunle"
                       fill
+                      sizes="(max-width: 1024px) 90vw, 420px"
                       className="object-cover object-top"
-                      priority
+                      loading="eager"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0d1117] via-[#0d1117]/20 to-transparent" />
                   </div>

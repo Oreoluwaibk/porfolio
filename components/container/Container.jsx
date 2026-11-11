@@ -1,6 +1,7 @@
 import React, { forwardRef, useState } from 'react';
-import { Button, Image, Layout } from "antd";
+import { Button, Layout } from "antd";
 import Link from 'next/link';
+import Image from 'next/image';
 import { newLogoNoBackground } from '@/asset/logos';
 import { CloseOutlined, GithubOutlined, InstagramFilled, LinkedinFilled, MenuOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -31,13 +32,12 @@ const Container = forwardRef(({ children, active, ...props }, ref) => {
                 <div className="flex-shrink-0 mt-6">
                     <Link href="/">
                         <Image
-                            src={newLogoNoBackground.src}
+                            src={newLogoNoBackground}
                             width={100}
                             height={40}
-                            preview={false}
                             alt="Oreoluwa's logo"
                             className="hover:opacity-80 transition-opacity"
-                            priority
+                            loading="eager"
                         />
                     </Link>
                 </div>
